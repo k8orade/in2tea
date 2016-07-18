@@ -1,0 +1,4 @@
+AuthUserFile http://dev.in2tea.com.au/.htpasswd
+AuthName "Security Area"
+AuthType Basic
+require valid-user
