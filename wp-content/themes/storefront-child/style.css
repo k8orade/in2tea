@@ -11,3 +11,39 @@ License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  	storefront-child
 Tags:         	e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options
 */
+
+/*
+Beige: #f8f7f6
+Dark green: #276334
+Bright green: #47BB18
+*/
+
+.sph-hero video.sph-video {
+  width: 100%;
+}
+
+.site-header {
+  padding: 0;
+}
+
+.header_wrapper {
+  position: relative;
+}
+
+.site-header .custom-logo-link {
+  float: none;
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+
+.site-header .custom-logo-link .custom-logo {
+  height: 4em;
+  width: auto;
+  margin: 0 auto;
+}
+
+.woocommerce-active .site-header .site-header-cart {
+  float: none;
+  position: absolute;
+  right: 0;
+}
