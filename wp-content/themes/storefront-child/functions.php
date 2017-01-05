@@ -1,8 +1,18 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'storefront_child_theme_enqueue_styles' );
+
+# Add custom styles
+add_action('wp_enqueue_scripts', 'storefront_child_theme_enqueue_styles');
 
 function storefront_child_theme_enqueue_styles() {
     wp_enqueue_style('storefront', get_template_directory_uri() . '/style.css' );
+}
+
+# Add custom Javascript
+add_action('wp_enqueue_scripts', 'load_storefront_child_javascript_files');
+
+function load_storefront_child_javascript_files() {
+	wp_register_script('storefront_child_script', get_stylesheet_directory_uri() . '/storefront_child.js', array('jquery'), true );
+	wp_enqueue_script('storefront_child_script');
 }
 
 # Remove 'designed by WooThemes'
@@ -21,6 +31,7 @@ function custom_storefront_credit() {
 	<?php
 }
 
+# Customise header
 function header_wrapper_open() {
   ?>
 	<div class="header_wrapper">
@@ -33,7 +44,12 @@ function header_wrapper_close() {
 	<?php
 }
 
-# Customise header
+function primary_menu_button() {
+  ?>
+  <button id="primary-menu-toggle"><span>Menu</span></button>
+  <?php
+}
+
 add_action('init', 'customise_storefront_header');
 
 function customise_storefront_header() {
@@ -47,6 +63,7 @@ function customise_storefront_header() {
 
   add_action('storefront_header', 'storefront_primary_navigation_wrapper', 1);
   add_action('storefront_header', 'storefront_primary_navigation', 2);
+  add_action('storefront_header', 'primary_menu_button', 3);
   add_action('storefront_header', 'storefront_primary_navigation_wrapper_close', 4);
 
   add_action('storefront_header', 'header_wrapper_open', 9);
