@@ -210,7 +210,7 @@ if ( ! function_exists( 'storefront_secondary_navigation' ) ) {
 	 * Display Secondary Navigation
 	 *
 	 * @since  1.0.0
-	 * @return void
+	i * @return void
 	 */
 	function storefront_secondary_navigation() {
 	    if ( has_nav_menu( 'secondary' ) ) {

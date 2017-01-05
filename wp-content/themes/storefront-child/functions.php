@@ -50,6 +50,30 @@ function primary_menu_button() {
   <?php
 }
 
+if ( ! function_exists( 'storefront_primary_navigation' ) ) {
+	/**
+	 * Display Primary Navigation
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function storefront_primary_navigation() {
+		?>
+		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+			<button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="true"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location'	=> 'primary',
+					'container_class'	=> 'primary-navigation',
+					)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+		<?php
+	}
+}
+
 add_action('init', 'customise_storefront_header');
 
 function customise_storefront_header() {

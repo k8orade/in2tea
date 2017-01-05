@@ -47,3 +47,7 @@ Bright green: #47BB18
   position: absolute;
   right: 0;
 }
+
+#site-navigation button.menu-toggle {
+  display: block;
+}
